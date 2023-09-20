@@ -1,0 +1,17 @@
+Zaimplementuj w asemblerze program scopy, który przyjmuje dwa parametry będące nazwami plików:
+
+./scopy in_file out_file
+
+Program sprawdza liczbę parametrów. Jeśli ich liczba jest różna od 2, to program kończy się kodem 1.
+
+Program próbuje otworzyć do odczytu plik in_file. Jeśli się nie udało, to program kończy się kodem 1.
+
+Program próbuje utworzyć do zapisu nowy plik out_file z uprawnieniami -rw-r--r--. Jeśli się nie udało, bo na przykład taki plik już istnieje, to program kończy się kodem 1.
+
+Program czyta z pliku in_file i pisze do pliku out_file. Jeśli wystąpił błąd odczytu lub zapisu, to program kończy się kodem 1.
+
+Dla każdego odczytanego z pliku in_file bajtu, którego wartość jest kodem ASCII litery s lub S zapisuje ten bajt do pliku out_file.
+
+Dla każdego odczytanego z pliku in_file maksymalnego niepustego ciągu bajtów niezawierającego bajtu, którego wartość jest kodem ASCII litery s lub S, zapisuje do pliku out_file 16-bitową liczbę zawierającą liczbę bajtów w tym ciągu modulo 65536. Liczbę tę zapisuje binarnie w porządku cienkokońcówkowym (ang. little-endian).
+
+Na koniec program zamyka pliki i jeśli wszystko się udało, kończy się kodem 0.
